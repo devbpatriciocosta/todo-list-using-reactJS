@@ -27,7 +27,7 @@ function App() {
     </div>
     
     <div>
-      <Title text="Hello World - To do List - Project"/>
+      <Title text="Hello World - To do List - First React Project"/>
       <Subtitle text="Created by - @devbpatriciocosta"/>
     </div>
 
