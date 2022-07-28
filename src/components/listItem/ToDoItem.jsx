@@ -11,7 +11,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Paper from '@mui/material/Paper';
 
 
-export default function ToDoItem() {
+export default function ToDoItem({ toDo, deleteToDo }) {
             
   return (
     <Paper>
@@ -19,7 +19,7 @@ export default function ToDoItem() {
     
     <ListItem
       secondaryAction={
-        <IconButton edge="end" aria-label="comments">
+        <IconButton edge="end" aria-label="delete" onClick={() => deleteToDo(toDo.id)}>
           <DeleteIcon />
         </IconButton>
         }
@@ -33,7 +33,7 @@ export default function ToDoItem() {
                     disableRipple   
               />
           </ListItemIcon>
-        <ListItemText primary={`Line Item`} />
+        <ListItemText primary={toDo.text} />
       </ListItemButton>
     </ListItem>
 

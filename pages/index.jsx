@@ -9,10 +9,15 @@ import { useState } from 'react';
 
 function App() {
 
-  const [toDos, setTodos] = useState([]); 
+  const [toDos, setToDos] = useState([]); 
 
-  const toDoHandler = (toDo) => {
-    setTodos([...toDos, toDo])
+  const addToDo = (toDo) => {
+    setToDos([...toDos, toDo])
+  }
+
+  const deleteToDo = (id) => {
+    var filtered = toDos.filter((toDo) => toDo.id !== id)
+    setToDos(filtered)
   }
 
   return (
@@ -29,12 +34,12 @@ function App() {
     <div> 
       <Container maxWidth="xs" style={{ marginTop:"40px" }}>
 
-        <Form toDoHandler={toDoHandler}/>
+        <Form addToDo={addToDo}/>
 
         <List sx={{ marginTop: "40px"}}> 
-          {toDos.map((todo) => (
-            <div style={{ marginTop: "12px" }}>
-              <ToDoItem /> 
+          {toDos.map((toDo) => (
+            <div key={toDo.id} style={{ marginTop: "12px" }}>
+              <ToDoItem toDo={toDo} deleteToDo={deleteToDo}/> 
             </div>             
           ))}   
         </List>
