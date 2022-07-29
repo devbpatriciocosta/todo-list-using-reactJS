@@ -1,5 +1,5 @@
 import Title from '../src/components/title/Title'
-import Subtitle from '../src/components/subtitle/subtitle';
+import Subtitle from '../src/components/subtitle/Subtitle';
 import Header from '../src/components/header/Header';
 import Form from '../src/components/form/Form';
 import ToDoItem from '../src/components/listItem/ToDoItem';
